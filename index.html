@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beaúlizh Skincare</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animation for the fade-in effect */
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-fade-in-slow {
+      animation: fadeIn 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Toggle Slider Styles */
+    input:checked + div {
+      background-color: #4f46e5; /* Indigo */
+    }
+
+    input:checked + div .dot {
+      transform: translateX(100%);
+      background-color: white;
+    }
+
+    /* Styling for the toggle dot movement */
+    .dot {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Styling for the toggle background */
+    .toggle-bg {
+      width: 2.5rem;
+      height: 1.25rem;
+      background-color: #d1d5db;
+      border-radius: 9999px;
+      position: relative;
+    }
+
+    .toggle-bg.dark {
+      background-color: #4f46e5;
+    }
+
+    .dot {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 9999px;
+      position: absolute;
+      left: 0.125rem;
+      top: 0.125rem;
+      background-color: white;
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-500 dark:from-pink-300 dark:to-blue-400">
+            Beaúlizh Skincare
+        </h1>
+        <div class="hidden md:flex space-x-4">
+        </div>
+      <nav class="flex items-center space-x-4">
+        <a href="#work" class="hover:text-blue-500 dark:hover:text-blue-300">Products</a>
+        <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-300">Contact</a>
+  
+        <!-- Dark Mode Toggle in Navbar -->
+        <label class="flex items-center cursor-pointer">
+          <span class="mr-2 text-sm text-gray-700 dark:text-gray-300">Dark Mode</span>
+          <div class="relative">
+            <input type="checkbox" id="darkToggle" class="sr-only">
+            <div class="toggle-bg">
+              <div class="dot"></div>
+            </div>
+          </div>
+        </label>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-blue-50 dark:bg-blue-900 transition-all bg-cover bg-center"
+  style="background-image: url('assets/banner.jpg'); background-size: auto; background-position: center; height: 52vh;">
+</section>
+
+
+  <!-- Work Section -->
+  <section id="work" class="max-w-7xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-semibold mb-8 text-center">Products</h3>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Project Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Project Title</h4>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Short description of the project or work.</p>
+        </div>
+      </div>
+
+      <!-- Add more projects as needed -->
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white dark:bg-gray-800 py-16">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-semibold mb-6">Get in Touch</h3>
+      <p class="mb-6 text-gray-700 dark:text-gray-300">Feel free to message us on Facebook or send an email.</p>
+      
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+        <!-- Facebook Button -->
+        <a href="https://www.facebook.com/beaulizh.bib" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+          Message on Facebook
+        </a>
+  
+        <!-- Email Button -->
+        <a href="mailto:Beaulizh2018@gmail.com" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700 transition">
+          Send an Email
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-gray-500 text-sm bg-gray-50 dark:bg-gray-900">
+    &copy; 2025 Beaúlizh Skincare | All Rights Reserved
+  </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const root = document.documentElement;
+    const toggleBg = document.querySelector('.toggle-bg');
+    const dot = document.querySelector('.dot');
+
+    // Load saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.classList.add('dark');
+      toggle.checked = true;
+      toggleBg.classList.add('dark');
+      dot.style.transform = 'translateX(1.25rem)';
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        root.classList.add('dark');
+        toggleBg.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        dot.style.transform = 'translateX(1.25rem)';
+      } else {
+        root.classList.remove('dark');
+        toggleBg.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        dot.style.transform = 'translateX(0)';
+      }
+    });
+  </script>
+
+</body>
+</html>
