@@ -84,10 +84,11 @@
       <nav class="flex items-center space-x-4">
         <a href="#work" class="hover:text-blue-500 dark:hover:text-blue-300">Products</a>
         <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-300">Contact</a>
+        <a href="#about" class="hover:text-blue-500 dark:hover:text-blue-300">About</a>
   
         <!-- Dark Mode Toggle in Navbar -->
         <label class="flex items-center cursor-pointer">
-          <span class="mr-2 text-sm text-gray-700 dark:text-gray-300">Dark Mode</span>
+          <span class="mr-2 text-sm text-gray-700 dark:text-gray-300"></span>
           <div class="relative">
             <input type="checkbox" id="darkToggle" class="sr-only">
             <div class="toggle-bg">
@@ -105,6 +106,20 @@
   style="background-image: url('assets/banner.jpg'); background-size: auto; background-position: center; height: 52vh;">
 </section>
 
+<!-- About Section -->
+<section id="about" class="bg-white dark:bg-gray-800 py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center animate-fade-in">
+    <h3 class="text-3xl font-semibold mb-6">About Me</h3>
+    <p class="text-gray-700 dark:text-gray-300 text-lg mb-6">
+      Established in 2008, was formerly known as Speedthru Enterprises (SPEEDERM 2008-2015) to BiB Beauty in Box Trading (BiB BEAUTY IN BOX 2016-2017), adapted a new image and became Beaúlizh in BiB Beauty in Box Enterprises (BEAÚLIZH Skincare 2018 name after the owner) is dedicated to your beauty needs by bringing in innovative technology while maintaining the quality of offerings.
+    <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+      Beaúlizh Skincare is dedicated to helping you achieve glowing, healthy skin using gentle, effective, and thoughtfully formulated products. 
+      Founded with passion and backed by experience, our mission is to boost your confidence through radiant skincare. 💖
+    </p>
+  </div>
+</section>
+
+
 
   <!-- Work Section -->
   <section id="work" class="max-w-7xl mx-auto px-4 py-16">
@@ -113,11 +128,31 @@
 
       <!-- Project Card -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
-        <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">Project Title</h4>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Short description of the project or work.</p>
-        </div>
+        <img src="assets/9.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/2.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/3.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/4.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/5.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/6.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/7.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/8.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow group overflow-hidden transform transition hover:scale-105 duration-300">
+        <img src="assets/1.jpg" alt="Set 1" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer" onclick="openModal(this.src)" />
       </div>
 
       <!-- Add more projects as needed -->
@@ -129,21 +164,22 @@
   <section id="contact" class="bg-white dark:bg-gray-800 py-16">
     <div class="max-w-2xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold mb-6">Get in Touch</h3>
-      <p class="mb-6 text-gray-700 dark:text-gray-300">Feel free to message us on Facebook or send an email.</p>
-      
+      <p class="mb-6 text-gray-700 dark:text-gray-300">Feel free to message us on Facebook or send us an email.</p>
+  
       <div class="flex flex-col md:flex-row justify-center items-center gap-4">
         <!-- Facebook Button -->
         <a href="https://www.facebook.com/beaulizh.bib" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
           Message on Facebook
         </a>
   
-        <!-- Email Button -->
-        <a href="mailto:Beaulizh2018@gmail.com" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700 transition">
-          Send an Email
-        </a>
+        <!-- Email Display -->
+        <div class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-6 py-2 rounded">
+          Email: <a href="mailto:Beaulizh2018@gmail.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">Beaulizh2018@gmail.com</a>
+        </div>
       </div>
     </div>
   </section>
+  
   
 
   <!-- Footer -->
@@ -151,21 +187,25 @@
     &copy; 2025 Beaúlizh Skincare | All Rights Reserved
   </footer>
 
+  <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <img id="modalImage" src="" alt="Enlarged Product" class="max-h-[90%] max-w-[90%] rounded-lg shadow-lg">
+  </div>
+
   <!-- Dark Mode Toggle Script -->
   <script>
     const toggle = document.getElementById('darkToggle');
     const root = document.documentElement;
     const toggleBg = document.querySelector('.toggle-bg');
     const dot = document.querySelector('.dot');
-
-    // Load saved preference
+  
+    // Default to light mode, only activate dark if saved
     if (localStorage.getItem('theme') === 'dark') {
       root.classList.add('dark');
       toggle.checked = true;
       toggleBg.classList.add('dark');
       dot.style.transform = 'translateX(1.25rem)';
     }
-
+  
     toggle.addEventListener('change', () => {
       if (toggle.checked) {
         root.classList.add('dark');
@@ -179,7 +219,34 @@
         dot.style.transform = 'translateX(0)';
       }
     });
-  </script>
 
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target); // Remove after animation
+          }
+        });
+      });
+    
+      function openModal(src) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+      }
+    
+      function closeModal() {
+        document.getElementById('imageModal').classList.add('hidden');
+      }
+    
+      // Close modal on outside click
+      document.getElementById('imageModal').addEventListener('click', (e) => {
+        if (e.target.id === 'imageModal') {
+          closeModal();
+        }
+      });
+    
+  </script>
 </body>
 </html>
